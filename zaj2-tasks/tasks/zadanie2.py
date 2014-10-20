@@ -15,7 +15,7 @@ def load_animals(large_dataset=False):
     """
     file_name = 'animals-small.bin' if not large_dataset else 'animals.bin'
     file = pathlib.Path(__file__).parent / file_name
-    with open(file.name, 'rb') as f:
+    with open(str(file), 'rb') as f:
         return pickle.load(f)
 
 
