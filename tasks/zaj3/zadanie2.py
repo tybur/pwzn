@@ -12,6 +12,10 @@ def merge(path1, path2, out_file):
     :param str path2: Ścieżka do drugiego pliku
     :param str out_file:  Ścieżka wynikowa
 
+    Testowanie tej funkcji na pełnych danych może być mało wygodne, możecie
+    stworzyć inną funkcję która działa na dwóch listach/generatorach i testować
+    ją.
+
     Naiwna implementacja polegałaby na stworzeniu dwóch słowników które
     zawierają mapowanie ngram -> ilość wystąpień i połączeniu ich.
 

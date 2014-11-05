@@ -35,7 +35,8 @@ def suggester(input, data):
              względem prawdopodobieństwa tak że pierwszym elementem listy
              jest krotka z najbardziej prawdopodobną literą.
 
-    Przykładowa implementacja (można inaczej!):
+    Przykład implementacji
+    ----------------------
 
     By wygenerować częstotliwości należy:
 
@@ -43,13 +44,22 @@ def suggester(input, data):
 
     1. Odnaleźć pierwsze wystąpienie ngramu rozpoczynającego się od wartości
        ``foo``. Tutaj polecam algorytm przeszukiwania binarnego i moduł
-       ``bisect``
+       ``bisect``.
     2. Znaleźć ostatnie wystąpienie ngramu. Tutaj można albo ponownie przeszukać 
        binarnie, albo założyć po prostu przeszukać kolejene elementy listy.
+
+       .. note::
+
+            Kroki 1 i 2 można zastąpić mało wydajnym przeszukiwaniem naiwnym,
+            tj. przeiterować się po liście i jeśli ciąg znakóœ rozpoczyna się od
+            'foo' (patrz: https://docs.python.org/3.4/library/stdtypes.html#str.startswith)
+            zapamiętujemy go
+
     3. Stworzyć słownik który odwzorowuje następną literę (tą po `foo`) na
        ilość wystąpień. Pamiętaj że w data może mieć taką zawartość 
        ``[['fooabcd', 300], ['fooa    ', 300]]`` --- co w takim wypadku w słowniku tym
        powinno być {'a': 600}.
+
     4. Z tego słownika wyznaczyć prawdopodobieństwo wystąpienia kolejnej litery.
 
     Przykład zastosowania:

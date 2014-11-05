@@ -79,6 +79,9 @@ def generate_ngrams(contents, ngram_len=7):
     Funkcja wylicza częstotliwość n-gramów w części wikipedii.
     N-gramy są posortowane względem zawartości n-grama.
 
+    Testiowanie tej funkcji na pełnych danych może być uciążliwe, możecie
+    np. po 1000 stron kończyć tą funkcję.
+
     :param generator contents: Wynik wywołania funkcji: ``iter_over_contents``,
         czyli generator który zwraca krotki: (tytuł, zawartość artykułu).
     :param int ngram_len: Długość generowanych n-gramów. Jeśli parametr ten
