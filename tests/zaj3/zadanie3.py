@@ -73,10 +73,11 @@ class TestClass(unittest.TestCase):
             self.fail("By uzyskać ocenę odpal pełne testy")
 
     def test_most_popular(self):
-        for gram, freq in [(' of the', 562580), ('of the ', 534684), (' title ', 309060), ('in the ', 292861), (' in the', 287172), (' http w', 266237), ('f name ', 259296), (' ref na', 259287), ('ef name', 259247), ('ref nam', 259223), ('http ww', 253221), ('ttp www', 253116), ('tp www.', 250037), ('rl http', 218080), ('url htt', 218063), ('l http ', 213962), ('ublishe', 208728), ('publish', 206973), (' publis', 205873), (' url ht', 204023), ('blisher', 190072), ('lisher ', 185805), ('ion of ', 183989), (' first ', 179979), ('. ref n', 174057)]:
-            with self.subTest(gram):
-                self.assertEqual(
-                    self.ngrams[gram], freq)
+        if not self.SHORT:
+            for gram, freq in [(' of the', 562580), ('of the ', 534684), (' title ', 309060), ('in the ', 292861), (' in the', 287172), (' http w', 266237), ('f name ', 259296), (' ref na', 259287), ('ef name', 259247), ('ref nam', 259223), ('http ww', 253221), ('ttp www', 253116), ('tp www.', 250037), ('rl http', 218080), ('url htt', 218063), ('l http ', 213962), ('ublishe', 208728), ('publish', 206973), (' publis', 205873), (' url ht', 204023), ('blisher', 190072), ('lisher ', 185805), ('ion of ', 183989), (' first ', 179979), ('. ref n', 174057)]:
+                with self.subTest(gram):
+                    self.assertEqual(
+                        self.ngrams[gram], freq)
 
     def test_sha(self):
         out_file = tempfile.mktemp()
