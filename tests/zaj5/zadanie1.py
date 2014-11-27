@@ -27,7 +27,7 @@ class TestClass(unittest.TestCase):
         if not cls.SHORT:
             cls.exc = None
             try:
-                cls.data = load_data(str(pathlib.Path(cls.DATA_DIR, "zaj4", "enwiki-20140903-pages-articles_part_1.xmlascii.bin")))
+                cls.data = load_data(str(pathlib.Path(cls.DATA_DIR, "zaj5", "enwiki-20140903-pages-articles_part_1.xmlascii.bin")))
             except Exception as e:
                 cls.data = None
                 cls.exc = e
