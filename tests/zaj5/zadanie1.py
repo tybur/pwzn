@@ -76,9 +76,9 @@ class TestClass(unittest.TestCase):
         if not self.SHORT:
             self.assertEqual(self.sugester('ąęśłóź', self.data), [])
 
-    def test_sugester_2(self):
-        if not self.SHORT:
-            self.assertEqual(self.sugester('Rasput', self.data), [('i', 1.0)])
+    # def test_sugester_2(self):
+    #     if not self.SHORT:
+    #         self.assertEqual(self.sugester('Rasput', self.data), [('i', 1.0)])
 
     def __assert_results(self, expected, result):
         try:
